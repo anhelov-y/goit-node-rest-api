@@ -29,6 +29,10 @@ export const Contact = sequelize.define(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    owner: {
+      type: DataTypes.UUID,
+      allowNull: false,
+    },
   },
   {
     timestamps: false,
