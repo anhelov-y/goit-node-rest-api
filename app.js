@@ -40,6 +40,3 @@ await sequelize
     console.log(`Database connection failed: ${error.message}`);
     process.exit(1);
   });
-
-
-  
