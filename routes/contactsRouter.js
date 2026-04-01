@@ -6,7 +6,6 @@ import {
   createContact,
   updateContact,
   updateStatusContact,
-  updateStatusContact,
 } from "../controllers/contactsControllers.js";
 import validateBody from "../middlewares/validateBody.js";
 import validateParam from "../middlewares/validateParam.js";
@@ -14,7 +13,6 @@ import validateToken from "../middlewares/validateToken.js";
 import {
   createContactSchema,
   updateContactSchema,
-  updateContactFavoriteSchema,
   updateContactFavoriteSchema,
 } from "../schemas/contactsSchemas.js";
 
