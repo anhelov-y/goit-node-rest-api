@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db/db.js";
 
-export const Contact = sequelize.define(
-  "contacts",
+export const User = sequelize.define(
+  "users",
   {
     id: {
       type: DataTypes.UUID,
@@ -10,28 +10,27 @@ export const Contact = sequelize.define(
       allowNull: false,
       primaryKey: true,
     },
-    name: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isEmail: true,
-      },
+      unique: true,
     },
-    phone: {
+    subscription: {
+      type: DataTypes.ENUM,
+      values: ["starter", "pro", "business"],
+      defaultValue: "starter",
+    },
+    token: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: null,
     },
-    favorite: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
-    owner: {
-      type: DataTypes.UUID,
-      allowNull: false,
+    avatarurl: {
+      type: DataTypes.STRING,
+      defaultValue: null,
     },
   },
   {
