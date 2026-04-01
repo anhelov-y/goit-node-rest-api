@@ -14,6 +14,7 @@ async function listContacts(ownerId, limit, offset, favorite) {
 
 async function getContactById(contactId) {
   return Contact.findByPk(contactId);
+  return Contact.findByPk(contactId);
 }
 
 async function removeContact(contactId, ownerId) {
@@ -25,6 +26,8 @@ async function removeContact(contactId, ownerId) {
   return contact;
 }
 
+async function addContact(body) {
+  return await Contact.build(body).save();
 async function addContact(body) {
   return await Contact.build(body).save();
 }
@@ -47,5 +50,6 @@ export default {
   addContact,
   removeContact,
   updateContact,
+  updateStatusContact,
   updateStatusContact,
 };
